@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,9 @@ namespace ArenaGame
         private Random random = new Random();
         public Hero HeroA { get; set; }
         public Hero HeroB { get; set; }
+       
+
+
         public Hero Winner { get; set; }
         public GameNotifications? NotificationsCallBack { get; set; }
         public void Fight()
@@ -33,11 +37,13 @@ namespace ArenaGame
             {
                 attacker = HeroA;
                 defender = HeroB;
-            } else
+            }
+            else
             {
                 attacker = HeroB;
                 defender = HeroA;
             }
+
 
             while (attacker.IsAlive)
             {
@@ -53,7 +59,7 @@ namespace ArenaGame
                         Defender = defender,
                         Attack = attack,
                         Damage = actualDamage
-                    }); 
+                    });
                 }
 
                 Hero tempHero = attacker;

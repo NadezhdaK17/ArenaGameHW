@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 
 namespace ArenaGame.Heroes
 {
-   // assasin-убиец
-    public class Assassin : Hero
+    public class Ninja:Hero
     {
-        public Assassin(string name, double armor, double strenght, IWeapon weapon) : 
-            base(name, armor, strenght, weapon)
-        {
+        private double hitCount;
+        private double damageCoef;
+
+        public Ninja(string name, double armor,double strenght, IWeapon  weapon):base(name,armor, strenght, weapon) 
+        { 
+            hitCount = 1;
+            damageCoef = 0.3;
         }
 
         public override double Attack()
@@ -27,7 +30,6 @@ namespace ArenaGame.Heroes
         }
 
 
-      
 
     }
 }
